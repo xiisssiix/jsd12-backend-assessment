@@ -1,0 +1,64 @@
+### Add products
+POST http://localhost:3000/products/bulk
+Content-Type: application/json
+
+[
+  {
+    "name": "Keyboard",
+    "price": 500,
+    "quantity": 1
+  },
+  {
+    "name": "Mouse",
+    "price": 450,
+    "quantity": 3
+  },
+  {
+    "name": "Flash Drive",
+    "price": 300,
+    "quantity": 5
+  },
+  {
+    "name": "Headphones",
+    "price": 490,
+    "quantity": 2
+  },
+  {
+    "name": "Power Bank",
+    "price": 800,
+    "quantity": 4
+  }
+]
+
+### Get all products
+GET http://localhost:3000/products
+
+### Get products filtered by name
+GET http://localhost:3000/products?name=Headphones
+
+### Get products sorted by price descending
+GET http://localhost:3000/products?sort=-price
+
+### Get a single product by id
+GET http://localhost:3000/products/3
+
+### Update a product completely
+PUT http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+  "name": "Mechanical Keyboard",
+  "price": 900,
+  "quantity": 2
+}
+
+### Partially update a product
+PATCH http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+  "price": 990
+}
+
+### Delete a product
+DELETE http://localhost:3000/products/2
